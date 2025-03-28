@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>网易云音乐歌单导出助手</title>
+    <style>
+      .container {
+        width: 320px;
+      }
+      
+      .title-h2 {
+        margin-top: 0px;
+      }
+
+      .playlistInfo-container {
+        border: 2px solid #3498db; 
+        border-radius: 10px; 
+        padding: 10px;
+      }
+
+      .content-wrapper {
+        display: flex; /* 使用 flexbox 布局 */
+      }
+
+      .image-container {
+        width: 120px;
+        height: 120px;
+        margin-right: 20px;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: auto;
+        display: block; /* 移除图片底部的默认间距 */
+      }
+
+      .button-container {
+        display: flex; /* 使用 flexbox */
+        flex-direction: column; /* 垂直排列按钮 */
+        width: 150px; /* 按钮容器宽度 */
+      }
+
+      .button-container button {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        display: flex; /* 使用 flexbox */
+        flex-direction: column; /* 垂直排列按钮 */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>网易云Cover</h1>
+    <div class="container">
+      <button id="getPlaylistInfoButton" style="width: 140px">
+        👇获取歌单信息
+      </button>
+      <br />
+      <h2 id="msg"></h2>
+
+      <div
+        id="playlistInfo"
+        class="playlistInfo-container"
+        style="display: none"
+      >
+        <h2 id="title" class="title-h2"></h2>
+        <div class="content-wrapper">
+          <div class="image-container">
+            <img id="cover" alt="歌单封面" />
+          </div>
+          <div class="button-container">
+            <button id="exportPlaylistAsTxt">导出歌单曲目列表</button>
+            <button id="downloadPlaylistCover">下载歌单封面原图</button>
+            <button id="OpenAlbumCoverCollage">制作专辑封面拼图</button>
+          </div>
+        </div>
+      </div>
+      <div id="testInfo"></div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
